@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Market Screener</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="title">Crypto Market Screener</h1>
+            <div class="header-controls">
+                <button id="refreshBtn" class="btn btn-primary">
+                    <span id="refreshIcon">🔄</span>
+                    <span id="refreshText">Refresh</span>
+                </button>
+                <div class="last-updated" id="lastUpdated">
+                    Last updated: <span id="timestamp">Never</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Controls Section -->
+    <section class="controls">
+        <div class="container">
+            <div class="controls-grid">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Search by name or symbol..."
+                        autocomplete="off"
+                    >
+                </div>
+                <div class="filter-container">
+                    <select id="filterSelect" class="filter-select">
+                        <option value="all">All Coins</option>
+                        <option value="top10">Top 10</option>
+                        <option value="top50">Top 50</option>
+                        <option value="gainers">Gainers</option>
+                        <option value="losers">Losers</option>
+                        <option value="stablecoins">Stablecoins</option>
+                    </select>
+                </div>
+                <div class="results-count">
+                    <span id="resultsCount">0 results</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Error Banner -->
+    <div id="errorBanner" class="error-banner hidden">
+        <div class="container">
+            <div class="error-content">
+                <span id="errorMessage"></span>
+                <button id="retryBtn" class="btn btn-small">Retry</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator hidden">
+        <div class="spinner"></div>
+        <p>Loading market data...</p>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="table-wrapper">
+                <table class="crypto-table" id="cryptoTable">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-column="market_cap_rank">
+                                Rank <span class="sort-indicator"></span>
+                            </th>
+                            <th>Coin</th>
+                            <th class="sortable" data-column="current_price">
+                                Price (USD) <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable" data-column="price_change_percentage_24h">
+                                24h Change <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable" data-column="total_volume">
+                                24h Volume <span class="sort-indicator"></span>
+                            </th>
+                            <th class="sortable" data-column="market_cap">
+                                Market Cap <span class="sort-indicator"></span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="6" class="empty-state">Loading cryptocurrency data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="noResults" class="no-results hidden">
+                <p>No cryptocurrencies match your search criteria.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                Powered by 
+                <a href="https://www.coingecko.com" target="_blank" rel="noopener noreferrer">CoinGecko API</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Modules -->
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/sort.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
