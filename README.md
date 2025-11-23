@@ -22,6 +22,19 @@ A web-based cryptocurrency market screener that provides real-time market data, 
 - **API**: [CoinGecko API](https://www.coingecko.com/en/api/documentation) (Free tier, no authentication required)
 - **Deployment**: Nginx web servers with HAProxy load balancer
 
+## Live Demo
+
+The application is deployed and accessible via the following URLs:
+
+- **Load Balancer (Recommended)**: [http://44.212.67.118/](http://44.212.67.118/)
+  - Access the application through the HAProxy load balancer, which distributes traffic between Web01 and Web02
+
+- **Individual Server Instances**:
+  - **Web01**: [http://18.206.88.44/](http://18.206.88.44/)
+  - **Web02**: [http://54.221.47.133/](http://54.221.47.133/)
+
+> **Note**: For best performance and reliability, access the application through the load balancer URL. The individual server URLs are provided for testing and verification purposes.
+
 ## Local Setup
 
 ### Prerequisites
@@ -213,19 +226,22 @@ done
 1. **Test individual web servers**
 
 ```bash
-curl http://<WEB01_IP>
-curl http://<WEB02_IP>
+curl http://18.206.88.44  # Web01
+curl http://54.221.47.133  # Web02
 ```
 
 2. **Test load balancer**
 
 ```bash
-curl http://<LB01_IP>
+curl http://44.212.67.118  # Load Balancer
 ```
 
 3. **Access in browser**
 
-Open your browser and navigate to `http://<LB01_IP>` to see the application.
+Open your browser and navigate to:
+- **Load Balancer**: [http://44.212.67.118/](http://44.212.67.118/) (recommended)
+- **Web01**: [http://18.206.88.44/](http://18.206.88.44/)
+- **Web02**: [http://54.221.47.133/](http://54.221.47.133/)
 
 ## API Documentation
 
