@@ -47,7 +47,7 @@ The application is deployed and accessible via the following URLs:
 1. **Clone or download this repository**
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Goketech/crypto-market-screener.git
 cd crypto-market-screener
 ```
 
@@ -121,12 +121,13 @@ Add the following configuration:
 ```nginx
 server {
     listen 80;
-    server_name _;
+    server_name web01;
 
     root /var/www/crypto-screener;
     index index.html;
 
     location / {
+        add_header X-Served-By $hostname;
         try_files $uri $uri/ =404;
     }
 
