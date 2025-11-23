@@ -2,7 +2,7 @@
 
 A web-based cryptocurrency market screener that provides real-time market data, filtering, sorting, and search capabilities to help users make informed investment decisions.
 
-![Crypto Market Screener](https://via.placeholder.com/800x400?text=Crypto+Market+Screener)
+![Crypto Market Screener](https://cdn.britannica.com/36/241736-050-D40F2AEC/Abstract-cryptocurrency-with-gold-bitcoin-background.jpg)
 
 ## Features
 
