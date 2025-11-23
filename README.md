@@ -405,7 +405,17 @@ This project is open source and available for educational purposes.
 
 ## Demo Video
 
-[Link to 2-minute demo video showcasing features and deployment]
+Watch the 2-minute demo video showcasing all features and deployment:
+
+**[🎥 Watch Demo Video](https://youtu.be/I8L6AHZaKRQ)**
+
+The demo covers:
+- Real-time data fetching and display
+- Search functionality
+- Filter options (Top 10, Top 50, Gainers, Losers, Stablecoins)
+- Column sorting capabilities
+- Error handling and recovery
+- Deployment on multiple servers with load balancing
 
 ---
 
